@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>项目结项归档一般汇报方案</title>
+    <title>项目结项归档方案</title>
     <style>
         :root {
             --primary: #1677ff;
             --primary-dark: #155bd4;
-            --green: #16a34a;
-            --orange: #f59e0b;
             --red: #d9363e;
+            --red-soft: #fff1f2;
+            --orange: #f59e0b;
+            --orange-soft: #fff7ed;
+            --green: #16a34a;
+            --green-soft: #f0fdf4;
             --purple: #7c3aed;
+            --purple-soft: #f5f3ff;
+            --blue-soft: #eef6ff;
             --bg: #f4f7fb;
             --card: #ffffff;
             --text: #111827;
             --muted: #64748b;
             --border: #e5e7eb;
-            --blue-soft: #eef6ff;
-            --green-soft: #f0fdf4;
-            --orange-soft: #fff7ed;
-            --purple-soft: #f5f3ff;
             --shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
         }
 
@@ -36,21 +37,33 @@
         }
 
         .page {
-            max-width: 1440px;
+            max-width: 1280px;
             margin: 0 auto;
             padding: 28px;
         }
 
-        .page-title {
-            margin: 0 0 18px;
+        .hero {
+            margin-bottom: 18px;
             padding: 16px 20px;
-            border: 1px solid var(--border);
+            border: 1px solid #cfe0ff;
             border-radius: 14px;
             background: linear-gradient(135deg, #ffffff, #eef5ff);
-            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .hero h1 {
+            margin: 0;
             font-size: 22px;
             font-weight: 800;
-            text-align: center;
+        }
+
+        .hero p {
+            margin: 0 auto;
+            max-width: 880px;
+            color: #334155;
+            line-height: 1.8;
+            font-size: 15px;
         }
 
         .section {
@@ -63,10 +76,6 @@
         }
 
         .section-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
             padding: 18px 22px;
             border-bottom: 1px solid var(--border);
             background: #fff;
@@ -81,256 +90,73 @@
             margin: 6px 0 0;
             color: var(--muted);
             font-size: 13px;
-        }
-
-        .pill {
-            display: inline-flex;
-            align-items: center;
-            height: 30px;
-            padding: 0 12px;
-            border-radius: 999px;
-            background: var(--blue-soft);
-            color: var(--primary);
-            font-size: 13px;
-            font-weight: 700;
-            white-space: nowrap;
-        }
-
-        .overview {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 16px;
-            padding: 18px;
-        }
-
-        .conclusion {
-            padding: 18px;
-            border-radius: 16px;
-            background: linear-gradient(135deg, #f8fbff, #eef6ff);
-            border: 1px solid #cfe0ff;
-        }
-
-        .conclusion h3 {
-            margin: 0 0 12px;
-            font-size: 18px;
-        }
-
-        .conclusion p {
-            margin: 0;
-            color: #334155;
-            line-height: 1.8;
-            font-size: 14px;
-        }
-
-        .key-points {
-            display: grid;
-            gap: 10px;
-        }
-
-        .key-point {
-            padding: 14px;
-            border-radius: 14px;
-            border: 1px solid var(--border);
-            background: #fff;
-        }
-
-        .key-point strong {
-            display: block;
-            margin-bottom: 6px;
-            font-size: 15px;
-        }
-
-        .key-point span {
-            color: var(--muted);
             line-height: 1.6;
-            font-size: 13px;
         }
 
-        .problem-grid,
-        .standard-grid,
-        .reuse-grid,
-        .confirm-grid {
+        .summary-grid {
             display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 14px;
             padding: 18px;
         }
 
-        .problem-grid {
-            grid-template-columns: repeat(3, 1fr);
-        }
-
-                .mapping-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
+        .summary-card,
+        .control-card {
             padding: 18px;
-        }
-
-        .mapping-row {
-            display: flex;
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            overflow: hidden;
             border: 1px solid var(--border);
-        }
-
-        .mapping-problem {
-            flex: 1;
-            background: #fdfdfd;
-            padding: 20px;
-            border-right: 1px solid var(--border);
-            display: flex;
-            gap: 12px;
-        }
-
-        .mapping-solution {
-            flex: 2;
-            background: linear-gradient(180deg, #f6f9ff, #fff);
-            padding: 20px;
-            display: flex;
-            gap: 12px;
-        }
-
-        .ps-icon {
-            font-size: 24px;
-            line-height: 1.2;
-            flex-shrink: 0;
-        }
-
-        .ps-content {
-            flex: 1;
-        }
-
-        .mapping-problem h4 {
-            color: var(--text);
-            margin: 0 0 8px;
-            font-size: 15px;
-        }
-
-        .mapping-solution h4 {
-            color: var(--primary-dark);
-            margin: 0 0 10px;
-            font-size: 15px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .mapping-problem p {
-            margin: 0;
-            color: var(--muted);
-            font-size: 13px;
-            line-height: 1.6;
-        }
-
-        .mapping-solution ul {
-            margin: 0;
-            padding-left: 20px;
-            color: #334155;
-            font-size: 13px;
-            line-height: 1.6;
-        }
-
-        .mapping-solution li {
-            margin-bottom: 6px;
-        }
-        
-        .mapping-solution li:last-child {
-            margin-bottom: 0;
-        }
-
-        @media (max-width: 900px) {
-            .mapping-row {
-                flex-direction: column;
-            }
-            .mapping-problem {
-                border-right: none;
-                border-bottom: 1px solid var(--border);
-                background: #f8fafc;
-            }
-        }
-
-        .standard-grid {
-            grid-template-columns: repeat(3, 1fr);
-        }
-
-        .reuse-grid {
-            grid-template-columns: repeat(5, 1fr);
-        }
-
-        .confirm-grid {
-            grid-template-columns: repeat(4, 1fr);
-        }
-
-        .card {
-            padding: 16px;
-            border: 1px solid var(--border);
-            border-radius: 14px;
+            border-radius: 16px;
             background: #fff;
         }
 
-        .card.blue {
-            background: linear-gradient(180deg, #f6f9ff, #fff);
-            border-color: #cfe0ff;
-        }
-
-        .card.orange {
-            background: linear-gradient(180deg, #fff7ed, #fff);
-            border-color: #fed7aa;
-        }
-
-        .card.green {
-            background: linear-gradient(180deg, #f0fdf4, #fff);
-            border-color: #bbf7d0;
-        }
-
-        .card.purple {
-            background: linear-gradient(180deg, #f5f3ff, #fff);
-            border-color: #ddd6fe;
-        }
-
-        .card h3 {
+        .summary-card h3,
+        .control-card h3 {
             margin: 0 0 10px;
             font-size: 16px;
         }
 
-        .card ul,
-        .process-card ul,
-        .reuse-card ul {
+        .summary-card p,
+        .control-card p {
             margin: 0;
-            padding-left: 18px;
             color: #334155;
-            line-height: 1.75;
+            line-height: 1.7;
             font-size: 14px;
         }
 
-        .highlight {
-            color: var(--red);
-            font-weight: 800;
+        .summary-card.blue {
+            background: linear-gradient(180deg, #f6f9ff, #fff);
+            border-color: #cfe0ff;
         }
 
-        .process-wrap {
+        .summary-card.orange {
+            background: linear-gradient(180deg, #fff7ed, #fff);
+            border-color: #fed7aa;
+        }
+
+        .summary-card.red {
+            background: linear-gradient(180deg, #fff1f2, #fff);
+            border-color: #fecaca;
+        }
+
+        .flow {
             padding: 20px;
-            background: linear-gradient(180deg, #fbfdff, #fff);
         }
 
-        .process {
+        .main-flow {
             display: grid;
             grid-template-columns: repeat(7, minmax(0, 1fr));
             gap: 12px;
         }
 
-        .process-card {
+        .flow-card {
             position: relative;
             min-height: 168px;
-            padding: 14px;
+            padding: 15px;
             border: 1px solid var(--border);
             border-radius: 16px;
             background: #fff;
         }
 
-        .process-card::after {
+        .flow-card::after {
             content: "";
             position: absolute;
             top: 50%;
@@ -340,406 +166,229 @@
             background: #b9d5ff;
         }
 
-        .process-card:last-child::after {
+        .flow-card:last-child::after {
             display: none;
         }
 
-        .process-no {
+        .flow-no {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 28px;
-            height: 28px;
+            width: 30px;
+            height: 30px;
             margin-bottom: 10px;
             border-radius: 50%;
             background: var(--blue-soft);
             color: var(--primary);
-            font-weight: 800;
+            font-weight: 900;
         }
 
-        .process-card h3 {
+        .flow-card h3 {
             margin: 0 0 8px;
             font-size: 15px;
         }
 
-        .process-card p {
+        .flow-card p {
             margin: 0;
             color: var(--muted);
             font-size: 13px;
             line-height: 1.65;
         }
 
-        .process-card.remind {
+        .flow-card.warn {
             border-color: #fed7aa;
             background: var(--orange-soft);
         }
 
-        .process-card.audit {
+        .flow-card.audit {
             border-color: #bfdbfe;
             background: var(--blue-soft);
         }
 
-        .process-card.archive {
+        .flow-card.archive {
             border-color: #bbf7d0;
             background: var(--green-soft);
         }
 
-        .timeline {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-            padding: 18px;
+        .flow-card.block {
+            border-color: #fca5a5;
+            background: var(--red-soft);
+            box-shadow: 0 6px 18px rgba(217, 54, 62, 0.10);
         }
 
-        .time-card {
-            padding: 16px;
-            border-radius: 14px;
-            background: #fff;
-            border: 1px solid var(--border);
-        }
-
-        .time-card strong {
-            display: block;
-            margin-bottom: 8px;
-            color: var(--primary-dark);
-        }
-
-        .time-card span {
-            color: var(--muted);
+        .flow-card.block .flow-no {
+            width: auto;
+            padding: 0 10px;
+            border-radius: 999px;
+            background: var(--red);
+            color: #fff;
             font-size: 13px;
-            line-height: 1.6;
         }
 
-        .table-wrap {
+        .flow-card.block h3,
+        .flow-card.block strong {
+            color: #b91c1c;
+        }
+
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
             padding: 18px;
         }
 
-        .table {
-            width: 100%;
-            border-collapse: collapse;
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            overflow: hidden;
-            font-size: 14px;
+        .control-card {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
         }
 
-        .table th,
-        .table td {
-            padding: 14px 16px;
-            border-bottom: 1px solid var(--border);
-            text-align: left;
-            vertical-align: top;
-            line-height: 1.65;
-        }
-
-        .table th {
-            background: #f8fafc;
-            color: #334155;
+        .role {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            width: fit-content;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 13px;
             font-weight: 800;
         }
 
-        .table tr:last-child td {
-            border-bottom: none;
+        .role.pm {
+            background: var(--blue-soft);
+            color: var(--primary-dark);
         }
 
-        .reuse-card {
-            padding: 15px;
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            background: #fff;
+        .role.finance {
+            background: var(--green-soft);
+            color: var(--green);
         }
 
-        .reuse-card h3 {
-            margin: 0 0 10px;
-            font-size: 15px;
+        .role.sales {
+            background: var(--purple-soft);
+            color: var(--purple);
         }
 
-        .note {
-            padding: 14px 18px;
-            margin: 0 18px 18px;
-            border-radius: 14px;
-            border: 1px solid #fde68a;
-            background: #fffbeb;
-            color: #78350f;
-            font-size: 14px;
-            line-height: 1.7;
-        }
-
-        @media (max-width: 1280px) {
-            .process {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-            }
-
-            .process-card::after {
-                display: none;
-            }
-
-            .reuse-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-        }
-
-        @media (max-width: 960px) {
-            .overview,
-            .problem-grid,
-            .standard-grid,
-            .timeline,
-            .confirm-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .process,
-            .problem-solution-card,
-            .reuse-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .page {
-                padding: 16px;
-            }
-        }
-
-        .flow {
-            padding: 24px;
+        .logic-list {
             display: grid;
-            gap: 18px;
-            background: #fff;
-        }
-
-        .step {
-            display: grid;
-            grid-template-columns: 82px minmax(0, 1fr);
-            gap: 20px;
-            align-items: stretch;
-            padding: 18px;
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            background: #fff;
-        }
-
-        .step-index {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border-radius: 14px;
-            background: #f8fafc;
-            border: 1px solid #edf2f7;
-        }
-
-        .step-index strong {
-            font-size: 28px;
-            color: var(--primary);
-        }
-
-        .step-index span {
-            color: var(--muted);
-            font-size: 12px;
-            margin-top: 4px;
-        }
-
-        .step-content {
-            min-width: 0;
-        }
-
-        .step-content h3 {
-            margin: 0 0 10px;
-            font-size: 20px;
-        }
-
-        .step-desc {
-            margin: 0 0 14px;
-            color: #4b5563;
-            line-height: 1.75;
-            font-size: 14px;
-        }
-
-        .points {
-            display: grid;
-            gap: 8px;
+            gap: 10px;
             margin: 0;
             padding: 0;
             list-style: none;
         }
 
-        .points li {
-            display: flex;
-            gap: 8px;
-            color: #374151;
+        .logic-list li {
+            padding: 12px;
+            border-radius: 12px;
+            background: #f8fafc;
+            color: #334155;
             font-size: 13px;
-            line-height: 1.55;
+            line-height: 1.6;
         }
 
-        .points li::before {
-            content: "";
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--primary);
-            flex: 0 0 auto;
-            margin-top: 7px;
-        }
-
-        .text-danger {
-            color: #d9363e;
+        .logic-list li.danger {
+            background: #fff1f2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
             font-weight: 700;
         }
 
-        .screenshot {
-            grid-column: 1 / -1;
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            background: #f9fafb;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px;
+        .logic-list li.ok {
+            background: #f0fdf4;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+            font-weight: 700;
         }
 
-        .screenshot img {
-            width: 1024px;
-            max-width: 100%;
-            height: auto;
-            object-position: top center;
-            display: block;
-            background: #fff;
-            border-radius: 10px;
-        }
 
         @media (max-width: 1180px) {
-            .step {
+            .main-flow,
+            .controls,
+            .summary-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .flow-card::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .page {
+                padding: 16px;
+            }
+
+            .main-flow,
+            .controls,
+            .summary-grid {
                 grid-template-columns: 1fr;
             }
         }
     </style>
-
 </head>
 <body>
     <div class="page">
-        <h1 class="page-title">项目结项归档方案</h1>
+        <div class="hero">
+            <h1>项目结项归档方案</h1>
+        </div>
 
         <section class="section">
             <div class="section-header">
-                <div>
-                    <h2>一、结项归档主流程</h2>
-                    <p>流程从执行单完成开始，到资料归档复用结束，形成可提醒、可补充、可审核、可统计的闭环。</p>
-                </div>
+                <h2>一、不结项影响什么？</h2>
             </div>
-            <div class="process-wrap">
-                <div class="process">
-                    <div class="process-card">
-                        <span class="process-no">1</span>
-                        <h3>执行单完成</h3>
-                        <p>每次执行单录入完成后，系统记录本次执行金额和执行时间。</p>
-                    </div>
-                    <div class="process-card remind">
-                        <span class="process-no">2</span>
-                        <h3>判断结项场景</h3>
-                        <p>系统判断执行金额是否等于合同金额，或是否已半年未再次执行。</p>
-                    </div>
-                    <div class="process-card">
-                        <span class="process-no">3</span>
-                        <h3>推送结项提醒</h3>
-                        <p>满足最终结项或阶段性结项条件后，系统提醒项目负责人采集结项资料。</p>
-                    </div>
-                    <div class="process-card">
-                        <span class="process-no">4</span>
-                        <h3>选择项目类型</h3>
-                        <p>项目经理选择培训类或非培训类，系统据此展示必填资料清单。</p>
-                    </div>
-                    <div class="process-card">
-                        <span class="process-no">5</span>
-                        <h3>上传结项资料</h3>
-                        <p>项目负责人按清单上传资料，支持多次补充和追加结项。</p>
-                    </div>
-                    <div class="process-card audit">
-                        <span class="process-no">6</span>
-                        <h3>审核资料完整性</h3>
-                        <p>系统校验必填项，直属上级和 VP 审核资料是否齐全、真实、分类正确。</p>
-                    </div>
-                    <div class="process-card archive">
-                        <span class="process-no">7</span>
-                        <h3>归档统计复用</h3>
-                        <p>审核通过后资料入库，同时纳入主管季度统计和后续业务复用。</p>
-                    </div>
+            <div class="summary-grid">
+                <div class="summary-card red">
+                    <h3>影响项目经理：绩效数据核算剔除</h3>
+                    <p>有达到结项条件但未结项的项目时，系统进行未结项标记。日常管理与财务计算绩效时，该未结项项目不计入项目经理的已完成业绩池，直接影响完成率与考核数据。</p>
+                </div>
+                <div class="summary-card orange">
+                    <h3>影响回款发起：阻断回款发起</h3>
+                    <p>将“结项归档”作为回款发起的强前置条件。未结项归档的项目无法触达回款流程。</p>
                 </div>
             </div>
         </section>
 
-                <section class="section">
+        <section class="section">
             <div class="section-header">
-                <div>
-                    <h2>二、为什么要结项及结项难点？（解决动力与时机问题）</h2>
-                    <p>结项的核心目的是将高价值资料沉淀为数字资产。当前面临项目经理动力不足、触发时机不清等难点。</p>
-                </div>
+                <h2>二、结项归档主流程</h2>
             </div>
-            <div class="mapping-container">
-                <div class="mapping-row">
-                    <div class="mapping-problem">
-                        <span class="ps-icon">🎯</span>
-                        <div class="ps-content">
-                            <h4>结项的核心目的是什么？</h4>
-                            <p>明确为什么要结项，梳理结项的业务核心价值。</p>
-                        </div>
+            <div class="flow" style="background: #f8fafc;">
+                <img src="./9.png" alt="项目结项归档主流程图" style="width: 100%; display: block; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 24px;">
+                <div class="main-flow">
+                    <div class="flow-card">
+                        <span class="flow-no">1</span>
+                        <h3>录入执行单与判断</h3>
+                        <p>项目经理录入执行单后，系统自动判断执行金额是否等于合同金额，项目执行完毕。</p>
                     </div>
-                    <div class="mapping-solution">
-                        <span class="ps-icon">💡</span>
-                        <div class="ps-content">
-                            <h4>沉淀数字资产与实现管理闭环</h4>
-                            <ul>
-                                <li><strong>沉淀企业资产：</strong>将项目交付过程中的高价值资料沉淀为企业数字资产，供后续销售、售前、交付团队高效复用。</li>
-                                <li><strong>实现管理闭环：</strong>给项目执行画上句号，将结项与否作为项目团队复盘和绩效考核的最终闭环依据。</li>
-                            </ul>
-                        </div>
+                    <div class="flow-card archive">
+                        <span class="flow-no">2</span>
+                        <h3>正常结项归档闭环</h3>
+                        <p>推送结项提醒，项目经理上传结项归档资料，审核通过后项目结项归档完成。</p>
                     </div>
-                </div>
-                <div class="mapping-row">
-                    <div class="mapping-problem">
-                        <span class="ps-icon">🎯</span>
-                        <div class="ps-content">
-                            <h4>项目经理缺少主动结项动力</h4>
-                            <p>结项动作常被忽略，且未结项对绩效、复盘、项目关闭的影响不明确。</p>
-                        </div>
+                    <div class="flow-card">
+                        <span class="flow-no">3</span>
+                        <h3>项目经理日常查询</h3>
+                        <p>自行查询绩效完成情况，核对累计绩效和未结项项目绩效对比是否一致。</p>
                     </div>
-                    <div class="mapping-solution">
-                        <span class="ps-icon">💡</span>
-                        <div class="ps-content">
-                            <h4>提供归档入口，定期提醒结项及给主管推送归档数据</h4>
-                            <ul>
-                                <li><strong>项目经理自驱：</strong>项目经理本身具备资料沉淀的意愿，系统为其提供专门的结项归档入口，解决过往“想归档却无处传”的客观阻碍。</li>
-                                <li><strong>季度统计：</strong>系统向主管定期推送其团队内负责项目数、已结项数、未结项数和资料未上传情况。</li>
-                                <li><strong>管理闭环：</strong>将未结项数据作为部门复盘、项目关闭检查和绩效管理的参考依据，促使主管督办。</li>
-                            </ul>
-                        </div>
+                    <div class="flow-card warn">
+                        <span class="flow-no">4</span>
+                        <h3>财务绩效核算</h3>
+                        <p>财务线下计算项目经理绩效时，判断若有未归档项目，未结项项目不参与绩效核算。</p>
                     </div>
-                </div>
-                <div class="mapping-row">
-                    <div class="mapping-problem">
-                        <span class="ps-icon">⏱️</span>
-                        <div class="ps-content">
-                            <h4>结项触发时机不明确</h4>
-                            <p>合同金额与执行金额不一致时长周期项目无法结项，导致资料积压。</p>
-                        </div>
+                    <div class="flow-card">
+                        <span class="flow-no">5</span>
+                        <h3>销售可催回款查询</h3>
+                        <p>财务每月线下提醒销售查询可催回款状态，销售进而进行项目可催回款查询。</p>
                     </div>
-                    <div class="mapping-solution">
-                        <span class="ps-icon">💡</span>
-                        <div class="ps-content">
-                            <h4>建立分场景自动提醒与追加归档机制</h4>
-                            <ul>
-                                <li><strong>阶段性结项：</strong>执行金额不等于合同金额，且半年内未再次执行时，提醒项目负责人进行阶段性结项。</li>
-                                <li><strong>最终结项提醒：</strong>最后一次执行单完成后，若执行金额等于合同金额，立即推送结项提醒。</li>
-                                <li><strong>逾期督办提醒：</strong>考虑资料整理通常需5个工作日，最后一次执行单后两周仍未结项，系统再次提醒并纳入统计。</li>
-                                <li><strong>追加结项能力：</strong>系统提供“追加结项”入口，允许分阶段多次补充资料。</li>
-                            </ul>
-                        </div>
+                    <div class="flow-card block">
+                        <span class="flow-no" style="width: 30px; padding: 0;">6</span>
+                        <h3>催回款流程阻断</h3>
+                        <p>系统判断是否满足<strong style="color: var(--red);">“执行金额等于合同金额+项目归档完毕+客户确认”</strong>，否则催回款流程阻断。</p>
+                    </div>
+                    <div class="flow-card audit">
+                        <span class="flow-no">7</span>
+                        <h3>跨角色反向督办</h3>
+                        <p>合同系统提醒销售存在未归档项目，销售进行项目结项复核，并督促项目经理进行结项归档。</p>
                     </div>
                 </div>
             </div>
@@ -747,416 +396,75 @@
 
         <section class="section">
             <div class="section-header">
-                <div>
-                    <h2>三、结项到底审什么？（明确系统与人工边界）</h2>
-                    <p>审批节点多，各角色审核重点不清，容易造成流转效率低下和标准不一。</p>
-                </div>
+                <h2>三、项目方案具体措施</h2>
             </div>
-            <div class="mapping-container">
-                <div class="mapping-row">
-                    <div class="mapping-problem">
-                        <span class="ps-icon">📋</span>
-                        <div class="ps-content">
-                            <h4>系统前置与必填资料校验</h4>
-                            <p>资料标准不一，上传时存在漏传或分类错误风险。明确各类别归档要求，作为系统强制校验与人工审核的依据。</p>
-                        </div>
-                    </div>
-                    <div class="mapping-solution" style="flex-direction: column;">
-                        <div style="display: flex; gap: 12px; margin-bottom: 16px;">
-                            <span class="ps-icon">💡</span>
-                            <div class="ps-content">
-                                <h4>按项目类型约束材料清单</h4>
-                                <p style="margin:0; font-size:13px; color:#64748b;">系统根据项目类型自动展示必填资料，限制漏传。以下为培训类项目的归档要求明细：</p>
-                            </div>
-                        </div>
-                        <div class="table-wrap" style="padding: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--border);">
-                            <table class="table" style="border: none; margin: 0;">
-                                <thead>
-                                    <tr>
-                                        <th style="width: 25%;">分类</th>
-                                        <th style="width: 55%;">具体归档材料及信息</th>
-                                        <th style="width: 20%; text-align: center;">是否必须</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td rowspan="9" style="vertical-align: middle; font-weight: bold; background: #fff;">项目基础信息</td>
-                                        <td>立项时间</td>
-                                        <td style="text-align: center;"><span class="pill" style="background: #f0fdf4; color: #16a34a; height: 24px; font-size: 12px; padding: 0 10px;">是</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>结项时间</td>
-                                        <td style="text-align: center;"><span class="pill" style="background: #f0fdf4; color: #16a34a; height: 24px; font-size: 12px; padding: 0 10px;">是</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>培训主题</td>
-                                        <td style="text-align: center;"><span class="pill" style="background: #f0fdf4; color: #16a34a; height: 24px; font-size: 12px; padding: 0 10px;">是</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>培训对象</td>
-                                        <td style="text-align: center;"><span class="pill" style="background: #f0fdf4; color: #16a34a; height: 24px; font-size: 12px; padding: 0 10px;">是</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>培训人数</td>
-                                        <td style="text-align: center;"><span class="pill" style="background: #f0fdf4; color: #16a34a; height: 24px; font-size: 12px; padding: 0 10px;">是</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>培训时长</td>
-                                        <td style="text-align: center;"><span class="pill" style="background: #f0fdf4; color: #16a34a; height: 24px; font-size: 12px; padding: 0 10px;">是</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>课程名称</td>
-                                        <td style="text-align: center;"><span class="pill" style="background: #f0fdf4; color: #16a34a; height: 24px; font-size: 12px; padding: 0 10px;">是</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>讲师姓名</td>
-                                        <td style="text-align: center;"><span class="pill" style="background: #f0fdf4; color: #16a34a; height: 24px; font-size: 12px; padding: 0 10px;">是</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>客户满意度</td>
-                                        <td style="text-align: center;"><span class="pill" style="background: #f0fdf4; color: #16a34a; height: 24px; font-size: 12px; padding: 0 10px;">是</span></td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td rowspan="3" style="vertical-align: middle; font-weight: bold; background: #fdfdfd;">项目训前准备相关资料</td>
-                                        <td style="background: #fdfdfd;">培训需求调研问卷</td>
-                                        <td style="text-align: center; background: #fdfdfd;"><span class="pill" style="background: #f1f5f9; color: #64748b; height: 24px; font-size: 12px; padding: 0 10px;">否</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="background: #fdfdfd;">项目计划（含预算方案）</td>
-                                        <td style="text-align: center; background: #fdfdfd;"><span class="pill" style="background: #f1f5f9; color: #64748b; height: 24px; font-size: 12px; padding: 0 10px;">否</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="background: #fdfdfd;">售前方案</td>
-                                        <td style="text-align: center; background: #fdfdfd;"><span class="pill" style="background: #f1f5f9; color: #64748b; height: 24px; font-size: 12px; padding: 0 10px;">否</span></td>
-                                    </tr>
-                        
-                                    <tr>
-                                        <td rowspan="3" style="vertical-align: middle; font-weight: bold; background: #fff;">执行过程相关资料</td>
-                                        <td>课纲</td>
-                                        <td style="text-align: center;"><span class="pill" style="background: #f0fdf4; color: #16a34a; height: 24px; font-size: 12px; padding: 0 10px;">是</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>课件</td>
-                                        <td style="text-align: center;"><span class="pill" style="background: #f0fdf4; color: #16a34a; height: 24px; font-size: 12px; padding: 0 10px;">是</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>课堂记录（照片）</td>
-                                        <td style="text-align: center;"><span class="pill" style="background: #f0fdf4; color: #16a34a; height: 24px; font-size: 12px; padding: 0 10px;">是</span></td>
-                                    </tr>
-                        
-                                    <tr>
-                                        <td rowspan="4" style="vertical-align: middle; font-weight: bold; background: #fdfdfd;">成果验收相关资料</td>
-                                        <td style="background: #fdfdfd;">试卷</td>
-                                        <td style="text-align: center; background: #fdfdfd;"><span class="pill" style="background: #f1f5f9; color: #64748b; height: 24px; font-size: 12px; padding: 0 10px;">否</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="background: #fdfdfd;">学员成绩表</td>
-                                        <td style="text-align: center; background: #fdfdfd;"><span class="pill" style="background: #f1f5f9; color: #64748b; height: 24px; font-size: 12px; padding: 0 10px;">否</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="background: #fdfdfd;">学员满意度调查问卷</td>
-                                        <td style="text-align: center; background: #fdfdfd;"><span class="pill" style="background: #f1f5f9; color: #64748b; height: 24px; font-size: 12px; padding: 0 10px;">否</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="background: #fdfdfd;">项目总结报告</td>
-                                        <td style="text-align: center; background: #fdfdfd;"><span class="pill" style="background: #f0fdf4; color: #16a34a; height: 24px; font-size: 12px; padding: 0 10px;">是</span></td>
-                                    </tr>
-                        
-                                    <tr>
-                                        <td rowspan="2" style="vertical-align: middle; font-weight: bold; background: #fff;">补充资料</td>
-                                        <td>突发情况的应急方案</td>
-                                        <td style="text-align: center;"><span class="pill" style="background: #f1f5f9; color: #64748b; height: 24px; font-size: 12px; padding: 0 10px;">否</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="border-bottom: none;">项目经验总结文档</td>
-                                        <td style="text-align: center; border-bottom: none;"><span class="pill" style="background: #f1f5f9; color: #64748b; height: 24px; font-size: 12px; padding: 0 10px;">否</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px;">
-                            <div class="card purple" style="border: 1px solid #e5e7eb; border-radius: 12px; padding: 14px;">
-                                <h3 style="margin-bottom: 6px; font-size: 14px;">📝 非培训类补充</h3>
-                                <p style="margin: 0; color: #334155; font-size: 13px; line-height: 1.6;">由项目经理补充合作内容、交付成果、验收标准。可上传合同约定成果、验收记录、项目总结等结果性资料。</p>
-                            </div>
-                            <div class="card green" style="border: 1px solid #e5e7eb; border-radius: 12px; padding: 14px;">
-                                <h3 style="margin-bottom: 6px; font-size: 14px;">⚙️ 通用资料规则</h3>
-                                <p style="margin: 0; color: #334155; font-size: 13px; line-height: 1.6;">资料支持多次补充和追加结项。课件、照片等大文件需支持压缩、转 PDF 或断点续传等处理方式。</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mapping-row">
-                    <div class="mapping-problem">
-                        <span class="ps-icon">👤</span>
-                        <div class="ps-content">
-                            <h4>人工审批节点到底审什么？</h4>
-                            <p>业务、VP、财务的角色审核边界需要清晰界定。</p>
-                        </div>
-                    </div>
-                    <div class="mapping-solution">
-                        <span class="ps-icon">💡</span>
-                        <div class="ps-content">
-                            <h4>明确业务审核核心角色及审核内容</h4>
-                            <ul>
-                                <li><strong>直属上级（核心审核）：</strong>作为主要审核人，重点审核资料是否齐全、真实、分类是否正确，纠正项目经理理解偏差。</li>
-                                <li><strong>VP（最终确认）：</strong>作为流程的最终确认节点，把控整体交付质量与风险。</li>
-                               
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="section-header">
-                <div>
-                    <h2>四、归档资料给谁用？（明确复用场景）</h2>
-                    <p>归档资料不仅要“存”，更要“用”。需要建立便于检索、多角色受益的流转闭环。</p>
-                </div>
-            </div>
-            <div class="mapping-container">
-                <div class="mapping-row">
-                    <div class="mapping-problem">
-                        <span class="ps-icon">🔄</span>
-                        <div class="ps-content">
-                            <h4>归档资料缺乏统一流转途径</h4>
-                            <p>资料分散，无法做到可查、可看、可下载、可复用。</p>
-                        </div>
-                    </div>
-                    <div class="mapping-solution">
-                        <span class="ps-icon">💡</span>
-                        <div class="ps-content">
-                            <h4>同步至企业级数字资产库</h4>
-                            <ul>
-                                <li><strong>自动沉淀：</strong>结项审核通过后，资料自动归档进入统一的“数字资产库管理系统”。</li>
-                                <li><strong>标签化管理：</strong>系统自动为归档文件打上项目、客户、行业、课程等标签，便于后续按维度进行智能检索和在线预览。</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="mapping-row">
-                    <div class="mapping-problem">
-                        <span class="ps-icon">👥</span>
-                        <div class="ps-content">
-                            <h4>各业务角色的现实复用价值不明显</h4>
-                            <p>不知道归档资料能给不同岗位的同事带来什么具体帮助。</p>
-                        </div>
-                    </div>
-                    <div class="mapping-solution" style="flex-direction: column;">
-                        <div style="display: flex; gap: 12px; margin-bottom: 16px;">
-                            <span class="ps-icon">💡</span>
-                            <div class="ps-content">
-                                <h4>资料复用场景</h4>
-                             
-                            </div>
-                        </div>
-                        <div class="reuse-grid" style="padding:0; gap:12px;">
-                            <div class="reuse-card">
-                                <h3>项目复盘</h3>
-                                <ul>
-                                    <li>查看执行过程。</li>
-                                    <li>沉淀问题经验。</li>
-                                    <li>复用项目模板。</li>
-                                </ul>
-                            </div>
-                            <div class="reuse-card">
-                                <h3>售前支持</h3>
-                                <ul>
-                                    <li>复用方案资料。</li>
-                                    <li>参考行业案例。</li>
-                                    <li>降低重复编写成本。</li>
-                                </ul>
-                            </div>
-                            <div class="reuse-card">
-                                <h3>投标材料</h3>
-                                <ul>
-                                    <li>复用验收证明。</li>
-                                    <li>提取项目业绩。</li>
-                                    <li>补充成功案例。</li>
-                                </ul>
-                            </div>
-                            <div class="reuse-card">
-                                <h3>讲师运营</h3>
-                                <ul>
-                                    <li>查看课件课纲。</li>
-                                    <li>参考满意度。</li>
-                                    <li>支撑讲师复用。</li>
-                                </ul>
-                            </div>
-                            <div class="reuse-card">
-                                <h3>AI应用数据资产</h3>
-                                <ul>
-                                    <li>作为后续数字知识库基础。</li>
-                                    <li>售前方案生成。</li>
-                                    <li>支持智能检索。</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="section">
-            <div class="section-header">
-                <div>
-                    <h2>五、系统功能落点</h2>
-                    <p>围绕问题解决方案，系统侧需要落地以下功能能力。</p>
-                </div>
-            </div>
-            <div class="confirm-grid">
-                <div class="card orange">
-                    <h3>阶段性结项和自动提醒</h3>
-                    <ul>
-                        <li>执行金额不等于合同金额，且半年未再次执行时提醒阶段性结项。</li>
-                        <li>执行金额等于合同金额时立即提醒最终结项，两周未结项再次提醒。</li>
+            <div class="controls">
+                <div class="control-card">
+                    <span class="role sales">销售与合同回款侧</span>
+                    <h3>系统卡点：阻断回款发起</h3>
+                    <p>将项目“执行进度100%”“内部归档”及“客户确认”作为合同<strong style="color: var(--red);">进入回款流程的强前置条件</strong>。</p>
+                    <ul class="logic-list">
+                        <li class="danger">未结项影响：由于未结项导致无法触达回款条件，无法申请回款；</li>
+                        <li class="ok">结项后影响：释放回款发起权限，销售端可正常核算提成。</li>
                     </ul>
                 </div>
-                <div class="card blue">
-                    <h3>追加结项</h3>
-                    <ul>
-                        <li>增加“再次结项”或“追加结项”入口。</li>
-                        <li>支持分阶段补充资料和重复提交审核。</li>
+                <div class="control-card">
+                    <span class="role pm">管理数据统计（针对项目经理）</span>
+                    <h3>绩效报表：未结项不计入业绩</h3>
+                    <p>通过系统实时暴露未结项导致的业绩差额，以此推动项目经理自驱结项。</p>
+                    <ul class="logic-list">
+                        <li class="danger">未结项状态：在系统提供的管理数据报表中，该项目金额不计入项目经理的已完成业绩（形成目标缺口）。</li>
+                        <li class="ok">结项后状态：金额正常计入“已完成项目”中，恢复完成结项项目的真实业绩展示。</li>
                     </ul>
                 </div>
-                <div class="card green">
-                    <h3>必填校验</h3>
-                    <ul>
-                        <li>项目经理选择培训类或非培训类项目。</li>
-                        <li>系统按项目类型展示必填资料并限制漏传提交。</li>
-                    </ul>
-                </div>
-                <div class="card purple">
-                    <h3>季度统计</h3>
-                    <ul>
-                        <li><span class="highlight">定期推送主管，用于掌握团队项目结项和资料归档完成情况。</span></li>
-                      
-                        <li><span class="highlight">统计结果可作为部门复盘、项目关闭检查和绩效管理参考。</span></li>
+                <div class="control-card">
+                    <span class="role finance">财务与线下绩效侧</span>
+                    <h3>绩效核算联动剔除</h3>
+                    <p>财务或管理层在进行周期（如年底）绩效核算与复盘评估时，以系统输出为准。</p>
+                    <ul class="logic-list">
+                        <li class="danger">有未结项项目：该项目金额在核算执行单绩效时直接被剔除，不参与奖励计算。</li>
+                        <li class="ok">无未结项项目：按照正常金额进入个人及部门的绩效计算池。</li>
                     </ul>
                 </div>
             </div>
         </section>
+
         <section class="section">
             <div class="section-header">
-                <div>
-                    <h2>六、具体功能实现流程</h2>
-                    <p>结合前述业务与系统规划，展示项目结项归档线上落地的标准动作流转。</p>
-                </div>
+                <h2>四、具体功能落点</h2>
             </div>
-            
-            <div class="flow">
-                <div class="step">
-                    <div class="step-index">
-                        <strong>1</strong>
-                        <span>项目列表</span>
+            <div style="padding: 24px; background: #fff;">
+                <div style="display: grid; grid-template-columns: 1fr; gap: 24px;">
+                    <!-- 功能点 1：数据对比 -->
+                    <div style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #f8fafc;">
+                        <div style="padding: 18px 24px; background: #fff; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 12px;">
+                            <span style="display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: var(--blue-soft); color: var(--primary-dark); font-weight: bold; border-radius: 8px;">1</span>
+                            <div>
+                                <h3 style="margin: 0 0 4px; font-size: 16px; color: #0f172a;">绩效报表新增“归档项目累计完成”展示</h3>
+                                <p style="margin: 0; font-size: 13px; color: var(--text-light);">员工绩效目标报表中，增加【归档项目累计完成(元)】列，直观对比业绩缺口，可由项目经理自行查看各口径完成数据，以督促其进行归档动作。</p>
+                            </div>
+                        </div>
+                        <div style="padding: 20px; text-align: center; background: #f8fafc;">
+                            <img src="./7.png" alt="员工绩效目标报表" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                        </div>
                     </div>
-                    <div class="step-content">
-                        <h3>系统自动推送结项提醒，进入结项办理</h3>
-                        <p class="step-desc">
-                            改变过去靠人工记忆和催促的模式，系统根据执行金额和项目周期，自动向项目负责人发送结项办理通知。
-                        </p>
-                        <ul class="points">
-                            <li>触发机制一：<span class="text-danger">最终结项。最后一次执行单完成且执行金额 = 合同金额时立即提醒；两周未结项再次提醒。</span></li>
-                            <li>触发机制二：<span class="text-danger">阶段性结项。执行金额 ≠ 合同金额且半年内未再次执行时提醒阶段性归档。</span></li>
-                            <li>业务动作：在项目列表中点击“申请结项”（支持后续“追加结项”）。</li>
-                        </ul>
-                    </div>
-                    <div class="screenshot">
-                        <img src="./1.png" alt="1 项目列表申请结项">
-                    </div>
-                </div>
 
-                <div class="step">
-                    <div class="step-index">
-                        <strong>2</strong>
-                        <span>结项填写</span>
-                    </div>
-                    <div class="step-content">
-                        <h3>选择项目类型，按系统强制清单提交资料</h3>
-                        <p class="step-desc">
-                            业务人员进入结项页面，由系统根据类型进行必填项校验并限制漏传。
-                        </p>
-                        <ul class="points">
-                            <li>前端分类：项目经理选择培训类或非培训类项目，<span class="text-danger">系统按类型展示必填资料（如课件/照片等），限制漏传。</span></li>
-                            <li>大文件处理：课件等资料支持压缩、转 PDF 或断点续传。</li>
-                           
-                        </ul>
-                    </div>
-                    <div class="screenshot">
-                        <img src="./2.png" alt="2 结项信息填写">
-                    </div>
-                </div>
-
-                <div class="step">
-                    <div class="step-index">
-                        <strong>3</strong>
-                        <span>审批完成</span>
-                    </div>
-                    <div class="step-content">
-                        <h3>直属上级核准真实性，VP把控最终风险</h3>
-                        <p class="step-desc">
-                            资料提交后进入审批环节，明确各节点职责，杜绝责任不清。
-                        </p>
-                        <ul class="points">
-                            <li>核心审核：<span class="text-danger">直属上级重点审核资料是否齐全、真实、分类是否正确，纠正业务理解偏差。</span></li>
-                            <li>最终确认：VP作为流程最终节点，把控整体交付质量与风险。</li>
-                            <li>系统阻断：对于存在漏传且无合理解释的结项申请，流程予以驳回。</li>
-                        </ul>
-                    </div>
-                    <div class="screenshot">
-                        <img src="./3.png" alt="3 审批完成">
-                    </div>
-                </div>
-
-                <div class="step">
-                    <div class="step-index">
-                        <strong>4</strong>
-                        <span>状态更新</span>
-                    </div>
-                    <div class="step-content">
-                        <h3>列表状态更新为“已结项”，开放“追加结项”</h3>
-                        <p class="step-desc">
-                            审批通过后，项目状态正式落定。主管可在季度统计中查看到该项目完成闭环。
-                        </p>
-                        <ul class="points">
-                            <li>状态变化：交付状态更新为<span class="text-danger">“已结项”</span>，数据纳入主管复盘与绩效考核范围。</li>
-                            <li>长尾处理：<span class="text-danger">对于后续仍有资料产生的项目，支持点击“追加结项”再次归档上传。</span></li>
-                        </ul>
-                    </div>
-                    <div class="screenshot" style="flex-direction: column; gap: 16px;">
-                        <img src="./4.png" alt="4 项目列表状态已结项">
-                        <img src="./5.png" alt="4 状态更新与追加结项">
-                    </div>
-                </div>
-
-                <div class="step">
-                    <div class="step-index">
-                        <strong>5</strong>
-                        <span>资产归档</span>
-                    </div>
-                    <div class="step-content">
-                        <h3>同步至“数字资产库管理系统”，打通资料复用链路</h3>
-                        <p class="step-desc">
-                            结项不等于项目结束，高价值资料将在统一的管理平台上复用。
-                        </p>
-                        <ul class="points">
-                            <li>自动沉淀：结项审批通过的资料，<span class="text-danger">自动同步至数字资产库管理系统。</span></li>
-                            <li>智能标签：系统为文件打上客户、行业、讲师、课程等标签，便于后续智能检索。</li>
-                            <li>多维应用：直接支持售前打单、招投标业绩提取、讲师复用及沉淀高价值数据资产。</li>
-                        </ul>
-                    </div>
-                    <div class="screenshot">
-                        <img src="./6.png" alt="5 数字资产库归档复用">
+                    <!-- 功能点 2：回款阻断 -->
+                    <div style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff1f2;">
+                        <div style="padding: 18px 24px; background: #fff; border-bottom: 1px solid #fecaca; display: flex; align-items: center; gap: 12px;">
+                            <span style="display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: #fee2e2; color: #b91c1c; font-weight: bold; border-radius: 8px;">2</span>
+                            <div>
+                                <h3 style="margin: 0 0 4px; font-size: 16px; color: #991b1b;">合同系统回款发起阻断</h3>
+                                <p style="margin: 0; font-size: 13px; color: #b91c1c;">系统强制校验前置条件：项目若未完成“内部归档”和“客户确认”，则可催回款申请入口冻结，回款流程阻断。</p>
+                            </div>
+                        </div>
+                        <div style="padding: 20px; text-align: center; background: #fff1f2;">
+                            <img src="./8.png" alt="应收款列表-回款发起阻断" style="max-width: 100%; border-radius: 8px; border: 1px solid #fca5a5; box-shadow: 0 4px 12px rgba(239, 68, 68, 0.1);">
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-
-
-
-        
 
     </div>
 </body>
